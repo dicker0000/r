@@ -42,7 +42,7 @@ jobs:
         
         chmod 600 './id_rsa'
         
-        ssh-keygen -A
+        sudo ssh-keygen -A
         
         sudo mkdir '/var/run/sshd'
         sudo chmod 0755 '/var/run/sshd'
