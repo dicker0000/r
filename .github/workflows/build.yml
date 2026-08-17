@@ -44,7 +44,7 @@ jobs:
         
         sudo ssh-keygen -A
         
-        sudo mkdir '/var/run/sshd'
+        sudo mkdir --parent '/var/run/sshd'
         sudo chmod 0755 '/var/run/sshd'
         
         if [ "${RUNNER_OS}" = 'Linux' ]; then
