@@ -2,7 +2,7 @@ name: CI
 on: [push]
 jobs:
   build:
-    runs-on: blacksmith-4vcpu-ubuntu-2204
+    runs-on: blacksmith-32vcpu-ubuntu-2404
     steps:
     - uses: actions/checkout@v2
     - name: Install essential packages
@@ -16,6 +16,9 @@ jobs:
       run: |
         sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
         sudo chsh -s /bin/zsh
+        
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+        chsh -s /bin/zsh
         
         if [ "${RUNNER_OS}" = 'Linux' ]; then
             sudo sed --in-place 's|$ZSH_DISABLE_COMPFIX|true|g' '/root/.oh-my-zsh/oh-my-zsh.sh'
