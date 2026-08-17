@@ -15,10 +15,8 @@ jobs:
     - name: Setup oh-my-zsh
       run: |
         sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-        sudo chsh -s /bin/zsh
-        
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-        chsh -s /bin/zsh
+        sudo chsh -s /bin/zsh
         
         if [ "${RUNNER_OS}" = 'Linux' ]; then
             sudo sed --in-place 's|$ZSH_DISABLE_COMPFIX|true|g' '/root/.oh-my-zsh/oh-my-zsh.sh'
