@@ -16,7 +16,7 @@ jobs:
     - name: Setup oh-my-zsh
       run: |
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-        chsh -s /bin/zsh
+        sudo chsh "${USER}" -s /bin/zsh
         echo 'ZSH_DISABLE_COMPFIX=true' | sudo tee -a '/etc/environment'
     - name: Change global settings
       run: |
